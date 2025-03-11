@@ -39,13 +39,13 @@ ynh_script_progression "Setting up application with CURL..."
 # Installation with cURL
 ynh_local_curl "/install.php?submit" \
   "install_lang=French" \
-  "req_db_type=mysqli" \  # Utilisation de mysqli natif
-  "req_db_charset=utf8mb4" \  # Ajout du charset
+  "req_db_type=mysqli" \
+  "req_db_charset=utf8mb4" \
   "req_db_host=localhost" \
   "req_db_name=$db_name" \
   "db_username=$db_user" \
   "db_password=$db_pwd" \
-  "db_prefix=ynh_" \  # Préfixe modifié
+  "db_prefix=ynh_" \
   "req_username=$admin" \
   "req_password1=$password" \
   "req_password2=$password" \
@@ -55,7 +55,7 @@ ynh_local_curl "/install.php?submit" \
   "req_base_url=https://$domain$path" \
   "req_default_lang=French" \
   "req_default_style=Air" \
-  "csrf_token=$(ynh_generate_csrf_token)"  # Protection CSRF
+  "csrf_token=$(ynh_generate_csrf_token)"
 
 ynh_safe_rm "$install_dir/install.php"
 
